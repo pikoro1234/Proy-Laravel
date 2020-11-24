@@ -3,13 +3,18 @@
 @section('seccion')
 <h1>Listado Empleados</h1>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">nombre</th>
+      <th scope="col">correo</th>
+      <th scope="col">contraseña</th>
+      <th scope="col">dirección</th>
+      <th scope="col">ciudad</th>
+      <th scope="col">codigo postal</th>
+      <th scope="col">id empresa</th>
+      <th scope="col">acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -18,18 +23,28 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Mark</td>
+      <td>Mark</td>
+      <td>
+        <button type="button" class="btn btn-primary">Editar</button>
+        <button type="button" class="btn btn-secondary">Eliminar</button>
+      </td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">1</th>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Mark</td>
+      <td>
+        <button type="button" class="btn btn-primary">Editar</button>
+        <button type="button" class="btn btn-secondary">Eliminar</button>
+      </td>
     </tr>
   </tbody>
 </table>

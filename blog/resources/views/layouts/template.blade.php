@@ -22,7 +22,10 @@
         <nav class="links-menu">       
             <a href="{{route('departamentos')}}">Crear Departamento</a>
             <a href="{{route('crearEmplado')}}">Ingresar Trabajador</a>
+            <a href="{{route('listadoDepartamentos')}}">Mostrar Departamentos</a>
             <a href="{{route('listadoEmpleados')}}">Mostrar Trabajadores</a>
+
+            
         </nav>
     </div>       
 </header>

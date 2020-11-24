@@ -24,17 +24,19 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCiudad">Departamento</label>
+      <label for="inputCiudad">Departamentos</label>
       <select  id="inputDepartamentoEmple" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
+        <option value="">Selecciona departamento</option>
+        <option value="">...</option>
+        <option value="">...</option>
       </select>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPoblacion">Ciudad</label>
       <select id="inputCiudad" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
+        <option value="">Seleccione ciudad</option>
+        <option value="">...</option>
+        <option value="">...</option>
       </select>
     </div>
     <div class="form-group col-md-2">

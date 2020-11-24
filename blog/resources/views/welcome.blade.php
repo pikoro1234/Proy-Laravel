@@ -5,7 +5,10 @@
 
 <p class="mt-3"> esta aplicación es de ingresar, mostrar, editar y eliminar lo que es un CRUD completo</p>
 
-<form action="" method="POST">
+<form action="{{ route('departamentos') }}" method="POST">
+  
+  @csrf
+
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Departamento</label>
     <div class="col-sm-10">
@@ -27,5 +30,8 @@
     </div>
   </div>
 </form>
+@if ( session('mensaje') )
+    <div class="alert alert-success">{{ session('mensaje') }}</div>
+@endif
 
 @endsection
