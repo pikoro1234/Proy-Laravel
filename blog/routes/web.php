@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DepartamentsController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DepartamentsController::class,'index'])->name('departamentos');
+
+Route::get('crearempleado', [DepartamentsController::class,'crearEmpleado'])->name('crearEmplado');
+
+Route::get('listaempleados', [DepartamentsController::class,'listarEmpleado'])->name('listadoEmpleados');
+
+

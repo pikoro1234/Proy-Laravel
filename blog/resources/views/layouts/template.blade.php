@@ -19,10 +19,10 @@
         <div class="logo">
             <span>LOGO</span>
         </div>
-        <nav class="links-menu">
-            <a href="#">Ingresar</a>
-            <a href="#">Mostrar</a>
-            <a href="#">Eliminar</a>
+        <nav class="links-menu">       
+            <a href="{{route('departamentos')}}">Crear Departamento</a>
+            <a href="{{route('crearEmplado')}}">Ingresar Trabajador</a>
+            <a href="{{route('listadoEmpleados')}}">Mostrar Trabajadores</a>
         </nav>
     </div>       
 </header>
