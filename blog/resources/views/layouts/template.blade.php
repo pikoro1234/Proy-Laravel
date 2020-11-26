@@ -7,8 +7,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    
     <!--style-->
-    <link href="http://localhost/Proy-Laravel/blog/resources/css/style.css" rel="stylesheet">
+    <!--<link href="http://localhost/Proy-Laravel/blog/resources/css/style.css" rel="stylesheet">-->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <title>My Blogs</title>
     
 </head>
@@ -21,11 +23,9 @@
         </div>
         <nav class="links-menu">       
             <a href="{{route('departamentos')}}">Crear Departamento</a>
-            <a href="{{route('crearEmplado')}}">Ingresar Trabajador</a>
+            <a href="{{route('crearEmpleado')}}">Ingresar Trabajador</a>
             <a href="{{route('listadoDepartamentos')}}">Mostrar Departamentos</a>
             <a href="{{route('listadoEmpleados')}}">Mostrar Trabajadores</a>
-
-            
         </nav>
     </div>       
 </header>
@@ -44,6 +44,6 @@
 
 <!--jquery-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="http://localhost/Proy-Laravel/blog/resources/js/custom.js"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
 </body>
 </html>

@@ -8,44 +8,34 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">nombre</th>
-      <th scope="col">correo</th>
-      <th scope="col">contraseña</th>
-      <th scope="col">dirección</th>
+      <th scope="col">departamento</th>
       <th scope="col">ciudad</th>
-      <th scope="col">codigo postal</th>
-      <th scope="col">id empresa</th>
+      <th scope="col">estado</th>
       <th scope="col">acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-secondary">Eliminar</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Mark</td>
-      <td>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-secondary">Eliminar</button>
-      </td>
-    </tr>
+    @if($empleados)
+        @foreach($empleados as $emple)
+        <tr>
+          <th scope="row">{{$emple['id']}}</th>
+          <td>{{$emple['inputNombre']}}</td>
+          <td>{{$emple['inputDepartamentoEmple']}}</td>
+          <td>{{$emple['inputCiudadEmple']}}</td>
+          <td>
+            @if($emple['notificame'])
+              {{"activo"}}
+            @else
+              {{"inactivo"}}
+            @endif
+          </td>
+          <td>
+            <a href="{{route('editarEmpleados',$emple['id'])}}" class="btn btn-primary">{{$emple['id']}} Editar</a>
+            <a href="" class="btn btn-secondary">{{$emple['id']}} Eliminar</a>
+          </td>
+        </tr>
+        @endforeach
+    @endif
   </tbody>
 </table>
 

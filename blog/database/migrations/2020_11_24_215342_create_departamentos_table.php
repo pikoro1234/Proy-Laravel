@@ -17,6 +17,7 @@ class CreateDepartamentosTable extends Migration
             $table->id();
             $table->string('inputDepartamento');
             $table->string('inputEstado');
+            $table->string('inputCiudad');
             $table->string('adminDepart');
             $table->timestamps();
         });

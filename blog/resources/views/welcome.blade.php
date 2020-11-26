@@ -24,6 +24,19 @@
         </div>
     </div>
   </div>
+  <div class="form-group">
+      <label for="inputPoblacion">Ciudad</label>
+      <select id="inputCiudad" name="inputCiudad" class="form-control">
+        <option value="">Seleccione ciudad</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Sevilla">Sevilla</option>
+        <option value="Malaga">Malaga</option>
+        <option value="Bilbao">Bilbao</option>
+        <option value="Mursia">Mursia</option>
+        <option value="Asturias">Asturias</option>
+      </select>
+    </div>
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Enviar</button>

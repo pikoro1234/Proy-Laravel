@@ -15,17 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', [DepartamentsController::class,'index'])->name('departamentos');
+
+
 
 //ruta obtenemos datos de departamento
 Route::post('/', [DepartamentsController::class,'insertar'])->name('departamentos');
 
-Route::get('crearempleado', [DepartamentsController::class,'crearEmpleado'])->name('crearEmplado');
+
+
+Route::get('crearempleado', [DepartamentsController::class,'mostrarInsertEmple'])->name('crearEmpleado');
+
+
+
+Route::post('crearempleado', [DepartamentsController::class,'crearEmpleado'])->name('creartrabajador');
+
+
 
 Route::get('listaempleados', [DepartamentsController::class,'listarEmpleado'])->name('listadoEmpleados');
 
+
+
 Route::get('listadepartamentos', [DepartamentsController::class,'listarDepartamento'])->name('listadoDepartamentos');
 
-
-
-
+//ruta editar usuario
+Route::get('editar/{id}', [DepartamentsController::class,'editarEmple'])->name('editarEmpleados');

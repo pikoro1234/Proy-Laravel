@@ -8,20 +8,32 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">nombre</th>
+      <th scope="col">ciudad</th>
+      <th scope="col">estado</th>
       <th scope="col">administrador</th>
     </tr>
   </thead>
   <tbody>
+
+  @if($departamentos)
+    @foreach($departamentos as $depart)
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row">{{$depart['id']}}</th>
+      <td>{{$depart['inputDepartamento']}}</td>
+      <td>{{$depart['inputCiudad']}}</td>
+      <td>
+        @if($depart['inputEstado'])
+          {{"activo"}}
+        @else
+          {{"inactivo"}}
+        @endif
+      </td>
+      <td>{{$depart['adminDepart']}}</td>
     </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+
+    @endforeach
+  @endif
   </tbody>
 </table>
 

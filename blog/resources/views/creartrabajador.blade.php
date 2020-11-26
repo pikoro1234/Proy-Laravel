@@ -3,7 +3,18 @@
 @section('seccion')
 <h1>Ingresar Trabajador</h1>
 
-<form class="mb-5">
+<br>
+
+@if ( session('mensaje') )
+    <div class="alert alert-success">{{ session('mensaje') }}</div>
+@endif
+
+<br>
+
+<form class="mb-5" method="POST" action="{{route ('crearEmpleado')}}">
+
+  @csrf
+
   <div class="form-group">
     <label for="inputNombre"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre completo</font></font></label>
     <input type="text" class="form-control" name="inputNombre" id="inputNombre" placeholder="nombre">
@@ -25,22 +36,30 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCiudad">Departamentos</label>
-      <select  id="inputDepartamentoEmple" class="form-control">
-        <option value="">Selecciona departamento</option>
-        <option value="">...</option>
-        <option value="">...</option>
+      <select name="inputDepartamentoEmple" id="inputDepartamentoEmple" class="form-control">
+        <option value="trash">Selecciona departamento</option>
+        @if ($departamentos)
+          @foreach($departamentos as $depart)
+            <option value="{{$depart['inputDepartamento']}}">{{$depart['inputDepartamento']}}</option>
+          @endforeach
+        @endif
       </select>
     </div>
     <div class="form-group col-md-4">
       <label for="inputPoblacion">Ciudad</label>
-      <select id="inputCiudad" class="form-control">
+      <select id="inputCiudadEmple" name="inputCiudadEmple" class="form-control">
         <option value="">Seleccione ciudad</option>
-        <option value="">...</option>
-        <option value="">...</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Sevilla">Sevilla</option>
+        <option value="Malaga">Malaga</option>
+        <option value="Bilbao">Bilbao</option>
+        <option value="Mursia">Mursia</option>
+        <option value="Asturias">Asturias</option>
       </select>
     </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
+      <label for="inputZip">Codigo postal</label>
       <input type="text" class="form-control" name="inputZip" id="inputZip" placeholder="00000">
     </div>
   </div>
