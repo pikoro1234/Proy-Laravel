@@ -2,7 +2,13 @@
 
 @section('seccion')
 <h1>Listado Empleados</h1>
+<br>
 
+  @if ( session('mensaje') )
+    <div class="alert alert-success">{{ session('mensaje') }}</div>
+  @endif
+
+<br>
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -30,8 +36,13 @@
             @endif
           </td>
           <td>
-            <a href="{{route('editarEmpleados',$emple['id'])}}" class="btn btn-primary">{{$emple['id']}} Editar</a>
-            <a href="" class="btn btn-secondary">{{$emple['id']}} Eliminar</a>
+            <a href="{{route('editarempleado',$emple['id'])}}" class="btn btn-primary">{{$emple['id']}} Editar</a>
+            <form action="{{route('eliminar',$emple['id'])}}" method="POST">
+
+              @csrf
+              <input type="submit" class="btn btn-secondary" value="Eliminar">
+            </form>
+            
           </td>
         </tr>
         @endforeach

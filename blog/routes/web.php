@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\DepartamentsController;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DepartamentsController::class,'index'])->name('departamentos');
-
 
 
 //ruta obtenemos datos de departamento
@@ -39,5 +37,14 @@ Route::get('listaempleados', [DepartamentsController::class,'listarEmpleado'])->
 
 Route::get('listadepartamentos', [DepartamentsController::class,'listarDepartamento'])->name('listadoDepartamentos');
 
+
 //ruta editar usuario
-Route::get('editar/{id}', [DepartamentsController::class,'editarEmple'])->name('editarEmpleados');
+Route::get('editarempleado/{id}', [DepartamentsController::class,'editarEmpleado'])->name('editarempleado');
+
+
+//ruta actualizar empleado
+Route::post('editarempleado/{id}', [DepartamentsController::class,'actualizarEmpleado'])->name('editarempleado');
+
+
+//eliminar empleado
+Route::post('eliminar/{id}', [DepartamentsController::class,'eliminarEmpleado'])->name('eliminar');

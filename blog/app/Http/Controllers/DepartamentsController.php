@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Departamento;
 use App\Models\Empleado;
+use Illuminate\Support\Facades\DB;
 
 class DepartamentsController extends Controller
 {
@@ -81,8 +81,67 @@ class DepartamentsController extends Controller
     }
 
     //editar emplead
-    function editarEmple(){
-       
-        return view('editarEmpleados');
+    function editarEmpleado($id){
+
+        $datosTrabajador = DB::table('empleados')->where('id', $id)->first();
+
+        //traemos todos los departamentos para el select
+        $departamentos = Departamento::all();
+        
+        //dd($datosTrabajador);//
+        return view('editarempleado', compact('datosTrabajador','departamentos'));
+    }
+
+    function actualizarEmpleado(Request $request,$id){
+
+        $datoActualizado = Empleado::find($id);
+        
+        if ($request->inputNombre) {
+            
+            $datoActualizado->inputNombre = $request->inputNombre;
+        }
+
+        if ($request->inputEmail) {
+
+            $datoActualizado->inputEmail = $request->inputEmail;
+        }
+
+        if ($request->inputDireccion) {
+            
+            $datoActualizado->inputDireccion = $request->inputDireccion;
+        }
+
+        if ($request->inputDepartamentoEmple) {
+            
+            $datoActualizado->inputDepartamentoEmple = $request->inputDepartamentoEmple;
+        }
+
+        if ($request->inputCiudadEmple) {
+            
+            $datoActualizado->inputCiudadEmple = $request->inputCiudadEmple;
+        }
+
+        if ($request->inputZip) {
+            
+            $datoActualizado->inputZip = $request->inputZip;
+        }
+
+        if ($request->notificame) {
+            
+            $datoActualizado->notificame = $request->notificame;
+        }
+
+        $datoActualizado->save();
+        
+        return back()->with('mensaje','Datos actualizados');
+    }
+
+    function eliminarEmpleado(Request $request,$id){
+
+        $eliminarEmpleado = Empleado::find($id);
+
+        $eliminarEmpleado->delete();
+
+        return back()->with('mensaje','Empleado Eliminado');
     }
 }
